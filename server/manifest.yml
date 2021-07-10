@@ -1,11 +1,11 @@
   applications:
   - name: dealerreiew
     routes:
-      - route: jacquelinetucapstone.us-south.cf.appdomain.cloud
+      - route: jacquelinetucapstone787.us-south.cf.appdomain.cloud
     memory: 128M
     buildpack: python_buildpack
   - name: dealerreiew-nginx
     routes:
-      - route: jacquelinetucapstone.us-south.cf.appdomain.cloud
+      - route: jacquelinetucapstone787.us-south.cf.appdomain.cloud
     memory: 128M
     buildpack: staticfile_buildpack
