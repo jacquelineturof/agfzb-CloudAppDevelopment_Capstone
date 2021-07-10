@@ -1,11 +1,11 @@
   applications:
   - name: dealerreiew
     routes:
-      - route: https://jacquelineturof.mybluemix.net
+      - route: jacquelineturof.us-south.cf.appdomain.cloud
     memory: 128M
     buildpack: python_buildpack
   - name: dealerreiew-nginx
     routes:
-      - route: https://jacquelineturof.mybluemix.net/static
+      - route: jacquelineturof.us-south.cf.appdomain.cloud
     memory: 128M
     buildpack: staticfile_buildpack
