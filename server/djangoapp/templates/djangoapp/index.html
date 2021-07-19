@@ -24,12 +24,20 @@
             <div class="navbar-header">
               <a class="navbar-brand" href="#">Dealership Review</a>
             </div>
-            <form class="d-flex">
-                <input class="form-control me-2" type="text" placeholder="Username" aria-label="Username">
-                <input class="form-control me-2" type="password" placeholder="Password" aria-label="Password">
+            {% if user.is_authenticated %}
+            <div>
+                <a class="btn btn-link" href="#">{{ user.first_name }}({{ user.username }})</a>
+                <a class="btn btn-link" href="{% url 'djangoapp:logout' %}">Logout</a>
+            </div>
+            {% else %}
+            <form class="d-flex" action="{% url 'djangoapp:login' %}" method="post">
+                {% csrf_token %}
+                <input class="form-control me-2" name="username" type="text" placeholder="Username" aria-label="Username">
+                <input class="form-control me-2" name="psw" type="password" placeholder="Password" aria-label="Password">
                 <button class="btn btn-outline-primary" type="submit">Login</button>
-                <button class="btn btn-outline-secondary" type="submit">Signup</button>
+                <a class="btn btn-link" href="{% url 'djangoapp:registration' %}">Sign Up</a>
             </form>
+            {% endif %}
         </div>
     </nav>
     <!--Add a dealer table here -->
